@@ -1,6 +1,6 @@
 Bronze Functionality 
 1. Want user to be able to learn greek through the use of flashcards
-2. Want user to have the ability to “flip” through flashcards using keyboard arrows
+2. Want user to have the ability to “flip” through flashcards using keyboard arrows or previous/next buttons. 
 3. Want user to have the ability to input their answer when shown a vocabulary word
 4. Want user to know if they are correct or incorrect
 5. Want user to have the ability to recycle through incorrect answers until the user get’s the answer correct. 
@@ -10,6 +10,7 @@ Bronze Functionality
 Silver Functionality
 1. Want user to have the ability to add new flashcards
 2. Want to improve user experience with flashcard “flip” animation
+3. Want user to have the ability to determine if they’re right or wrong themselves. 
 
 
 Gold Functionality 
@@ -18,3 +19,4 @@ Gold Functionality
 3. Want to improve user experience by including images on the flashcards. 
 4. Want user’s score to be stored and tracked as they progress. 
 5. Want user to have the ability to choose different languages to learn (i.e hebrew, etc.). 
+6. Want user to have the ability to choose between an auto card “flip” or manual card “flip”. 
