@@ -1,0 +1,11 @@
+.header {
+  text-align: center;
+  font-family: Courier;
+}
+
+.newCards {
+  border: 2px solid grey;
+  padding: 4em;
+  background-color: lightblue;
+  text-align: center;
+}
