@@ -1,11 +1,42 @@
+body {
+  background-color: skyblue;
+}
+
+
 .header {
   text-align: center;
   font-family: Courier;
 }
 
+.index {
+  text-align: center;
+  margin: 2.5em;
+}
+
+input[type=button] {
+  border-radius: 5px;
+}
+
+input[value=Previous], [value=Next] {
+  border-radius: 5px;
+  font-family: Courier;
+  /*background-color: transparent;*/
+}
+
+input[value=Previous] {
+  margin-right: 1em;
+}
+
+input[value=Next] {
+  margin-left: 1em;
+}
+
 .newCards {
   border: 2px solid grey;
-  padding: 4em;
-  background-color: lightblue;
+  width: 50em;
+  margin: 0 auto;
+  padding: 2.5em;
+  background-color: white;
   text-align: center;
+  font-family: Courier;
 }
