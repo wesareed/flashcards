@@ -21,7 +21,7 @@ var deck = [
 // Show 1st card
 var current = 0
 var currentCard = deck[current]
-var display = document.querySelector(".porch");
+var display = document.querySelector("#landing");
 display.innerHTML = currentCard.front
 
 
