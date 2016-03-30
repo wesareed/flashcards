@@ -2,45 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flashcards by wesareed</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-  <link href="images/favicon.ico" rel="icon" type="image/x-icon" />
+  <title>Learn Greek</title>
+  <link rel="stylesheet" href="stylesheets/style2.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
+  <!-- Title -->
+  <h1>Let's Learn Greek!</h1>
 
-  <!-- Header -->
-  <div class="header">
-    <h1>Learn Greek!</h1>
+  <!-- Card Container -->
+  <div class="cardButton">
+    <p class="cardText"></p>
   </div>
 
-  <!-- Flashcard -->
-  <div id="landing">
-    <div class="cardButon"><p class="cardText"></p></div>
-    <!-- <p class="flipButton">
-      <h5>Flip</h5>
-    </p> -->
+  <!-- Next/Back buttons w/ position index -->
+  <div>
+    <input type="button" id="previousCard" value="previous" onclick="cardsAdmin.cardNav(-1);">
+    <span class="positionIndex">0/0</span>
+    <input type="button" id="nextCard" value="next" onclick="cardsAdmin.cardNav(1);">
   </div>
 
-
-  <!-- Positon Index -->
-  <div class="index">
-    <span>
-      <input type="button" id="previousButton" name="name" value="Previous">
-      <!-- <span class="positionIndex">0/0</span> -->
-      <input type="button" id="nextButton" name="name" value="Next">
+  <!-- User Entry -->
+  <div class="newCards">
+    <h3>Add Your Own Flashcards!</h3>
+    <span class="inputs">
+      Front: <input type="text" id="newFront" name="front">
+      Back:  <input type="text" id="newBack" name="back">
+      <input type="button" id="addButton" value="Add">
     </span>
   </div>
 
-  <!-- New Flashcard Input -->
-  <!-- <div class="newCards">
-    <span>
-      Front:<input type="text" name="front" value="">
-      Back:<input  type="text" name="back" value="">
-      <input type="button" name="name" value="Add Flashcard">
-    </span>
-  </div> -->
-  <script src="flashcards.js"></script>
+
+
+<script src="flashcards2.js"></script>
 </body>
 </html>
