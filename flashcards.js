@@ -1,62 +1,74 @@
-var deck = [
-  {
-    cardPosition: "1",
-    front: "love",
-    back: "αγάπη",
+var cardsAdmin = {
+  cards: [],
+  cardIndex: 0,
+  cardSide: 0,
+  cardButton:document.querySelector(".cardButton"),
+  cardText:document.querySelector(".cardText"),
+  cardPosition:document.querySelector(".positionIndex"),
+  cardCurrent: function() {
+    var currentCard = this.cards[this.cardIndex];
+    this.cardText.innerHTML = currentCard.display(this.cardSide);
+    this.cardPosition.innerHTML = (this.cardIndex + 1) + "/" + this.cards.length;
   },
 
-  {
-    cardPosition: "2",
-    front: "encourage",
-    back: "ενθαρρύνω",
+  cardFlip: function() {
+    if (this.cardSide === 0) {
+      this.cardSide = this.cardSide + 1
+    }
+    else {
+      this.cardSide = 0
+    }
   },
-
-  {
-    cardPosition: "3",
-    front: "father",
-    back: "πατέρας",
+  cardNav: function(navBy) {
+    this.cardIndex += navBy;
+    if(this.cardIndex < 0){
+      this.cardIndex += this.cards.length;
+    }
+    else {
+    this.cardIndex = this.cardIndex % this.cards.length;
+    }
+    //Reset next card to front
+    this.cardSide = 0;
+    this.cardCurrent();
   },
-];
-
-// Show 1st card
-var current = 0
-var currentCard = deck[current]
-var display = document.querySelector("#landing");
-display.innerHTML = currentCard.front
-
-
-// Flip current card
-function flip (){
-  if(display.innerHTML == currentCard.front) {
-    display.innerHTML = currentCard.back
-  }
-  else {
-    display.innerHTML = currentCard.front
+  cardClick: function() {
+    this.cardFlip();
+    this.cardCurrent();
+  },
+  cardAdd: function(front, back) {
+  this.cards.push(new Card(front, back));
   }
 };
 
-display.addEventListener("click", flip)
-
-
-// Next Button
-var nextButton = document.querySelector("#nextButton");
-
-function nextCard () {
-  current = current + 1
-  currentCard = deck[current]
-  display.innerHTML = currentCard.front
+// Add value to card for use in card
+function Card(front, back) {
+  this.frontValue = front;
+  this.backValue = back;
+  this.display = function(side) {
+    if(side === 0) {
+      return front;
+    }
+    else {
+      return back;
+    }
+  };
 }
 
-nextButton.addEventListener("click", nextCard)
-
-
-// Previous Button
-var previousButton = document.querySelector("#previousButton");
-
-function previousCard () {
-  current = current - 1
-  currentCard = deck[current]
-  display.innerHTML = currentCard.front
+function cardMove() {
+  cardsAdmin.cardClick();
 }
 
-previousButton.addEventListener("click", previousCard)
+cardsAdmin.cardAdd("love", "αγάπη");
+cardsAdmin.cardAdd("truth", "αλήθεια");
+cardsAdmin.cardAdd("fear", "φόβος");
+cardsAdmin.cardAdd("mankind", "ανθρωπότητα");
+cardsAdmin.cardAdd("scripture", "γραφή");
+cardsAdmin.cardAdd("good news", "Ευαγγέλιο");
+cardsAdmin.cardAdd("world", "κόσμος");
+cardsAdmin.cardAdd("money", "χρήματα");
+cardsAdmin.cardAdd("seek", "ψάχνω");
+cardsAdmin.cardAdd("glory", "δόξα");
+cardsAdmin.cardCurrent();
+
+
+cardsAdmin.cardText.addEventListener("click", cardMove);
