@@ -4,6 +4,8 @@ var cardsAdmin = {
     cardSide: 0,
     cardButton: document.querySelector(".cardButton"),
     cardText: document.querySelector(".cardText"),
+    cardPrev: document.querySelector("#previousCard"),
+    cardNext: document.querySelector("#nextCard"),
     cardPosition: document.querySelector(".positionIndex"),
     cardCurrent: function() {
         var currentCard = this.cards[this.cardIndex];
@@ -57,6 +59,14 @@ function cardMove() {
     cardsAdmin.cardClick();
 }
 
+function cardMinus() {
+  cardsAdmin.cardNav(-1);
+}
+
+function cardPlus() {
+  cardsAdmin.cardNav(1);
+}
+
 cardsAdmin.cardAdd("love", "αγάπη");
 cardsAdmin.cardAdd("truth", "αλήθεια");
 cardsAdmin.cardAdd("fear", "φόβος");
@@ -72,21 +82,23 @@ cardsAdmin.cardCurrent();
 
 // Checks for whitespace and returns if there is
 
-// String.prototype.isEmpty = function() {
-//     return (this.length === 0 || !this.trim());
-// };
-//
-// var cardEntry = function() {
-//     var newFront = document.querySelector("#newFront");
-//     var newBack = document.querySelector("#newBack");
-//     if (newFront.value.isEmpty() || newBack.value.isEmpty())
-//         return newFront, newBack;
-//
-//     cardsAdmin.cardAdd(newFront.value, newBack.value);
-//     newFront.value = "";
-//     newBack.value = "";
-//     cardsAdmin.cardCurrent();
-// }
+String.prototype.isEmpty = function() {
+    return (this.length === 0 || !this.trim());
+};
+
+var cardEntry = function() {
+    var newFront = document.querySelector("#newFront");
+    var newBack = document.querySelector("#newBack");
+    if (newFront.value.isEmpty() || newBack.value.isEmpty())
+        return newFront, newBack;
+
+    cardsAdmin.cardAdd(newFront.value, newBack.value);
+    newFront.value = "";
+    newBack.value = "";
+    cardsAdmin.cardCurrent();
+}
 
 
 cardsAdmin.cardText.addEventListener("click", cardMove);
+cardsAdmin.cardPrev.addEventListener("click", cardMinus);
+cardsAdmin.cardNext.addEventListener("click", cardPlus);
