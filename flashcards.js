@@ -7,6 +7,7 @@ var cardsAdmin = {
     cardPrev: document.querySelector("#previousCard"),
     cardNext: document.querySelector("#nextCard"),
     cardPosition: document.querySelector(".positionIndex"),
+    cardUser: document.querySelector("#addButton"),
     cardCurrent: function() {
         var currentCard = this.cards[this.cardIndex];
         this.cardText.innerHTML = currentCard.display(this.cardSide);
@@ -41,6 +42,7 @@ var cardsAdmin = {
 };
 
 // Add value to card for use in cardAdd
+
 function Card(front, back) {
     this.frontValue = front;
     this.backValue = back;
@@ -54,10 +56,7 @@ function Card(front, back) {
 }
 
 
-
-function cardMove() {
-    cardsAdmin.cardClick();
-}
+// Function for event listeners
 
 function cardMinus() {
   cardsAdmin.cardNav(-1);
@@ -66,6 +65,8 @@ function cardMinus() {
 function cardPlus() {
   cardsAdmin.cardNav(1);
 }
+
+// New cards
 
 cardsAdmin.cardAdd("love", "αγάπη");
 cardsAdmin.cardAdd("truth", "αλήθεια");
@@ -82,15 +83,15 @@ cardsAdmin.cardCurrent();
 
 // Checks for whitespace and returns if there is
 
-String.prototype.isEmpty = function() {
-    return (this.length === 0 || !this.trim());
-};
+function isEmpty(string) {
+  return (string.length === 0 || !string.trim());
+}
 
 var cardEntry = function() {
     var newFront = document.querySelector("#newFront");
     var newBack = document.querySelector("#newBack");
-    if (newFront.value.isEmpty() || newBack.value.isEmpty())
-        return newFront, newBack;
+    if (isEmpty(newFront.value) || isEmpty(newBack.value))
+        return
 
     cardsAdmin.cardAdd(newFront.value, newBack.value);
     newFront.value = "";
@@ -99,6 +100,13 @@ var cardEntry = function() {
 }
 
 
-cardsAdmin.cardText.addEventListener("click", cardMove);
+// Event listeners
+
+cardsAdmin.cardText.addEventListener("click", function() {
+  cardsAdmin.cardClick();
+});
 cardsAdmin.cardPrev.addEventListener("click", cardMinus);
 cardsAdmin.cardNext.addEventListener("click", cardPlus);
+cardsAdmin.cardUser.addEventListener("click", function() {
+  cardEntry();
+});
