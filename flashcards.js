@@ -68,16 +68,30 @@ function cardPlus() {
 
 // New cards
 
-cardsAdmin.cardAdd("love", "αγάπη");
-cardsAdmin.cardAdd("truth", "αλήθεια");
-cardsAdmin.cardAdd("fear", "φόβος");
-cardsAdmin.cardAdd("mankind", "ανθρωπότητα");
-cardsAdmin.cardAdd("scripture", "γραφή");
-cardsAdmin.cardAdd("good news", "Ευαγγέλιο");
-cardsAdmin.cardAdd("world", "κόσμος");
-cardsAdmin.cardAdd("money", "χρήματα");
-cardsAdmin.cardAdd("seek", "ψάχνω");
-cardsAdmin.cardAdd("glory", "δόξα");
+cardsAdmin.cardAdd("a", "α - Alpha");
+cardsAdmin.cardAdd("b", "β - Beta");
+cardsAdmin.cardAdd("g", "γ - Gamma");
+cardsAdmin.cardAdd("d", "δ - Delta");
+cardsAdmin.cardAdd("e", "ε - Epsilon");
+cardsAdmin.cardAdd("z", "ζ - Zeta");
+cardsAdmin.cardAdd("h", "η - Eta");
+cardsAdmin.cardAdd("th", "θ - Theta");
+cardsAdmin.cardAdd("i", "ι - Iota");
+cardsAdmin.cardAdd("k", "κ - Kappa");
+cardsAdmin.cardAdd("l", "λ - Lambda");
+cardsAdmin.cardAdd("m", "μ - Mu");
+cardsAdmin.cardAdd("n", "ν - Nu");
+cardsAdmin.cardAdd("x", "ξ - Xi");
+cardsAdmin.cardAdd("o", "ο - Omicron");
+cardsAdmin.cardAdd("p", "π - Pi");
+cardsAdmin.cardAdd("r", "ρ - Rho");
+cardsAdmin.cardAdd("s", "σ - Sigma");
+cardsAdmin.cardAdd("t", "τ - Tau");
+cardsAdmin.cardAdd("u", "υ - Upsilon");
+cardsAdmin.cardAdd("ph", "φ - Phi");
+cardsAdmin.cardAdd("ch", "χ - Chi	");
+cardsAdmin.cardAdd("ps", "ψ - Psi");
+cardsAdmin.cardAdd("o", "ω - Omega");
 cardsAdmin.cardCurrent();
 
 
