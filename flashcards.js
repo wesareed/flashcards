@@ -55,15 +55,24 @@ function Card(front, back) {
     };
 }
 
+// User card entry
 
-// Function for event listeners
-
-function cardMinus() {
-  cardsAdmin.cardNav(-1);
+// Checks for whitespace and returns if there is
+function isEmpty(value) {
+  return (value.length === 0 || !value.trim());
 }
 
-function cardPlus() {
-  cardsAdmin.cardNav(1);
+
+var cardEntry = function() {
+    var newFront = document.querySelector("#newFront");
+    var newBack = document.querySelector("#newBack");
+    if (isEmpty(newFront.value) || isEmpty(newBack.value))
+        return
+
+    cardsAdmin.cardAdd(newFront.value, newBack.value);
+    newFront.value = "";
+    newBack.value = "";
+    cardsAdmin.cardCurrent();
 }
 
 // New cards
@@ -95,32 +104,17 @@ cardsAdmin.cardAdd("o", "ω - Omega");
 cardsAdmin.cardCurrent();
 
 
-// Checks for whitespace and returns if there is
-
-function isEmpty(string) {
-  return (string.length === 0 || !string.trim());
-}
-
-var cardEntry = function() {
-    var newFront = document.querySelector("#newFront");
-    var newBack = document.querySelector("#newBack");
-    if (isEmpty(newFront.value) || isEmpty(newBack.value))
-        return
-
-    cardsAdmin.cardAdd(newFront.value, newBack.value);
-    newFront.value = "";
-    newBack.value = "";
-    cardsAdmin.cardCurrent();
-}
-
-
 // Event listeners
 
 cardsAdmin.cardText.addEventListener("click", function() {
   cardsAdmin.cardClick();
 });
-cardsAdmin.cardPrev.addEventListener("click", cardMinus);
-cardsAdmin.cardNext.addEventListener("click", cardPlus);
+cardsAdmin.cardPrev.addEventListener("click", function(){
+  cardsAdmin.cardNav(-1);
+});
+cardsAdmin.cardNext.addEventListener("click", function(){
+  cardsAdmin.cardNav(1);
+});
 cardsAdmin.cardUser.addEventListener("click", function() {
   cardEntry();
 });
