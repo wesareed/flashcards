@@ -50,9 +50,13 @@ p {
   box-shadow: 10px 10px 5px grey;
 }
 
+.positionIndex {
+  font-family: 'Montserrat', sans-serif;
+}
+]
+
 .inputs {
   font-family: myFirstFont;
-  font-size: 20px;
 }
 
 #newFront, #newBack {
