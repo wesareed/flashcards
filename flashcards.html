@@ -16,9 +16,9 @@
 
   <!-- Next/Back buttons w/ position index -->
   <div>
-    <input type="button" id="previousCard" value="previous" onclick="cardsAdmin.cardNav(-1);">
+    <input type="button" id="previousCard" value="previous card" onclick="cardsAdmin.cardNav(-1);">
     <span class="positionIndex">0/0</span>
-    <input type="button" id="nextCard" value="next" onclick="cardsAdmin.cardNav(1);">
+    <input type="button" id="nextCard" value="next card" onclick="cardsAdmin.cardNav(1);">
   </div>
 
   <!-- User Entry -->
@@ -27,7 +27,7 @@
     <span class="inputs">
       Front: <input type="text" id="newFront" name="front">
       Back:  <input type="text" id="newBack" name="back">
-      <input type="button" id="addButton" value="Add">
+      <input type="button" id="addButton" value="Add" onclick="cardEntry();">
     </span>
   </div>
 
