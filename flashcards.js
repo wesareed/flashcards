@@ -106,6 +106,15 @@ cardsAdmin.cardCurrent();
 
 // Event listeners
 
+document.addEventListener("keydown", function(event){
+  if (event.keyCode == "37") {
+    cardsAdmin.cardNav(-1);
+  }
+  else if(event.keyCode == "39"){
+    cardsAdmin.cardNav(1);
+  }
+})
+
 cardsAdmin.cardText.addEventListener("click", function() {
   cardsAdmin.cardClick();
 });
