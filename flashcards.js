@@ -127,3 +127,4 @@ cardsAdmin.cardNext.addEventListener("click", function(){
 cardsAdmin.cardUser.addEventListener("click", function() {
   cardEntry();
 });
+//To my understanding you did great job. Keep it up.
