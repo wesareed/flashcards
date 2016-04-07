@@ -38,6 +38,7 @@ var cardsAdmin = {
     },
     cardAdd: function(front, back) {
         this.cards.push(new Card(front, back));
+        // Nice use of constructor functions! Hopefully this makes more sense after the lesson on them.
     }
 };
 
@@ -62,7 +63,7 @@ function isEmpty(value) {
   return (value.length === 0 || !value.trim());
 }
 
-
+// It's awesome that you had most of you variables and functions inside of an object. It seems a little odd that these two functions are not also in the object. Also it's generally good to be consistent in the way you declare funcitons between a 'function expression' and a 'function statement'
 var cardEntry = function() {
     var newFront = document.querySelector("#newFront");
     var newBack = document.querySelector("#newBack");
@@ -109,7 +110,7 @@ cardsAdmin.cardCurrent();
 document.addEventListener("keydown", function(event){
   if (event.keyCode == "37") {
     cardsAdmin.cardNav(-1);
-  }
+  } // a comment about what 37 & 39 are would be helpful 'right arrow, left arrow'
   else if(event.keyCode == "39"){
     cardsAdmin.cardNav(1);
   }
